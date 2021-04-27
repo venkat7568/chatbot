@@ -1,0 +1,132 @@
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+.container{
+    border-style:solid;
+    border-width:thin;
+}
+
+.comllin{
+    margin:-100px auto auto auto;
+}
+.chat_bt{
+  border-style:solid;
+    border-width:thin;
+}
+.bu_bu{
+       color: inherit; /* blue colors for links too */
+  text-decoration: inherit; /* no underline */
+}
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  max-width: 300px;
+  margin: auto;
+  text-align: center;
+  font-family: arial;
+}
+
+.title {
+  color: grey;
+  font-size: 18px;
+}
+
+button {
+  border: none;
+  outline: 0;
+  display: inline-block;
+  padding: 8px;
+  color: white;
+  background-color: #000;
+  text-align: center;
+  cursor: pointer;
+  width: 100%;
+  font-size: 18px;
+}
+
+a {
+  text-decoration: none;
+  font-size: 22px;
+  color: black;
+}
+
+button:hover, a:hover {
+  opacity: 0.7;
+}
+.ti_ti{
+   background: linear-gradient(81.84deg, #0099ff -9.4%, #a033ff 51.57%, #ff5280 84.07%, #ff7061 90.59%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    display: inline-block;
+    font-size: 60px;
+    font-weight: 450;
+    letter-spacing: -2px;
+    line-height: 52px;
+    padding: 0 70px 0;
+    text-align: left;
+    word-break: break-word; 
+}
+@media only screen and (max-width:750px){
+
+.ti_ti{
+    background: linear-gradient(81.84deg, #0099ff -9.4%, #a033ff 51.57%, #ff5280 84.07%, #ff7061 90.59%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    display: inline-block;
+    font-size: 60px;
+    font-weight: 450;
+    letter-spacing: -2px;
+    line-height: 52px;
+    padding: 0 50px 0;
+    text-align: left;
+    word-break: break-word;
+}
+}
+.btn_img{
+border-radius:20px;
+margin: 20px auto;
+border-color:white;
+background:white;
+margin: auto;
+width:35px;
+}
+.back_btn{
+    width:25px;
+}
+</style>
+</head>
+<body>
+
+{% comment %} <div class="container"> {% endcomment %}
+
+<h2 class="ti_ti" style="font-family:verdana">Chatbot</h2>
+
+<hr>
+<form action="back">
+<button type="submit" class="btn_img" ><img src="media/pics/back_img.png" class="back_btn"></button>
+</form>
+<form action="request_button">
+<div class="card">
+  <img src="{{imgs.image.url}}" style="width:100%">
+  <h1>{{search}}</h1>
+  <p>Harvard University</p>
+  {% comment %} <div style="margin: 24px 0;">
+    <a href="#"><i class="fa fa-dribbble"></i></a> 
+    <a href="#"><i class="fa fa-twitter"></i></a>  
+    <a href="#"><i class="fa fa-linkedin"></i></a>  
+    <a href="#"><i class="fa fa-facebook"></i></a>
+  </div> {% endcomment %}
+  <p><button type="submit" value="{{search}}" name="request_button">{{btn_request}}</button></p>
+</div>
+</form>
+{% comment %} <h1>{{search}}</h1>
+<a href="">
+<button>message</button>
+<form action="request_button">
+<button type="submit"  value="{{search}}" name="request_button">request</button>
+</form> {% endcomment %}
+{% comment %} </div> {% endcomment %}
+</body>
+</html>

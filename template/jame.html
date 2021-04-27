@@ -1,0 +1,392 @@
+{% load static %}
+{% static "image" as baseUrl %}
+<!DOCTYPE html>
+<html>
+
+<head>
+<script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <meta charset="utf-8">
+    <!-- <title>Responsive Navbar | CodingNepal</title> -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+<style>
+
+*{
+  padding: 0;
+  margin: 0;
+  text-decoration: none;
+  list-style: none;
+  box-sizing: border-box;
+}
+body{
+  font-family: montserrat;
+}
+nav {
+    background: #f5f7f9;
+    height: 80px;
+    width: 100%;
+}
+label.logo{
+  color: white;
+  font-size: 35px;
+  line-height: 80px;
+  padding: 0 100px;
+  font-weight: bold;
+}
+nav ul{
+  float: right;
+  margin-right: 20px;
+}
+nav ul li{
+  display: inline-block;
+  line-height: 80px;
+  margin: 0 5px;
+}
+nav ul li a{
+  color: #ca205f;
+  font-size: 17px;
+  padding: 7px 13px;
+  border-radius: 3px;
+  text-transform: uppercase;
+}
+a.active,a:hover{
+  background: #f7f8f9;
+  transition: .5s;
+}
+.checkbtn {
+    font-size: 30px;
+    color: #ca205f;
+    float: right;
+    line-height: 80px;
+    margin-right: 40px;
+    cursor: pointer;
+    display: none;
+}
+#check{
+  display: none;
+}
+@media (max-width: 952px){
+  label.logo{
+    font-size: 30px;
+    padding-left: 50px;
+  }
+  nav ul li a{
+    font-size: 16px;
+  }
+}
+@media (max-width: 858px){
+  .checkbtn{
+    display: block;
+  }
+  ul{
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    background: #eff2f5;
+    top: 80px;
+    left: -100%;
+    text-align: center;
+    transition: all .5s;
+  }
+  nav ul li{
+    display: block;
+    margin: 50px 0;
+    line-height: 30px;
+  }
+  nav ul li a{
+    font-size: 20px;
+  }
+
+a:hover, a.active {
+    background: none;
+    color: #ca205f;
+}
+  #check:checked ~ ul{
+    left: 0;
+  }
+}
+section{
+  background: url(bg1.jpg) no-repeat;
+  background-size: cover;
+  height: calc(100vh - 80px);
+}
+
+.frinbutt{
+    background:"red";
+}
+
+ #gradient{
+    width:0;
+    height:20px;
+    margin: auto;
+    border-radius:100%;
+    -webkit-box-shadow: 0 50px 200px 150px rgba(255, 255, 255, 0.93);
+    -moz-box-shadow: 0 50px 200px 150px rgba(255, 255, 255, 0.93);
+    box-shadow: 0 50px 200px 150px rgba(255, 255, 255, 0.93);
+} 
+
+.comllin{
+   width:30%;
+   margin: auto;
+}
+.chat_bt{
+  border-style:solid;
+    border-width:thin;
+}
+.bu_bu{
+       color: inherit; /* blue colors for links too */
+  text-decoration: inherit; /* no underline */
+}
+.ti_ti{
+   background: linear-gradient(81.84deg, #0099ff -9.4%, #a033ff 51.57%, #ff5280 84.07%, #ff7061 90.59%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    display: inline-block;
+    font-size: 60px;
+    font-weight: 450;
+    letter-spacing: -2px;
+    line-height: 52px;
+    padding: 30px 60px 60px;
+    text-align: left;
+    word-break: break-word; 
+}
+
+.3_dios{
+    content: "\22EE";
+}
+.profile_img{
+    width:100px;
+    height:100px;
+    border-radius:50px;
+    margin: 40px 30px -100px -60px;
+}
+.profile_name{
+     background: #4e4848;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    display: inline-block;
+    font-size: 30px;
+    font-weight: 450;
+    letter-spacing: -2px;
+    line-height: 52px;
+    margin: 70px 50px 30px; 
+    text-align: left;
+    word-break: break-word;
+}
+.box {
+    background-color: #dfc8ca;
+    padding: 6.25rem 1.25rem;
+    padding-top: 6.25rem;
+    padding-right: 1.25rem;
+    padding-bottom: 6.25rem;
+    padding-left: 1.25rem;
+}
+.search{
+    margin:auto auto auto 20px;
+}
+
+input[type="file"] {
+    display: none;
+}
+.custom-file-upload {
+    {% comment %} border: 1px solid #ccc; {% endcomment %}
+    display: inline-block;
+    padding: 6px 12px;
+    cursor: pointer;
+}
+.chat_bt{
+   display: inline-block;
+    padding: 10px 0px;
+    cursor: pointer;
+    width:100%;
+    border-radius:20px;
+    border-color:#c3b9bc;
+}
+.chat_btn{
+ background:#c3b9bc;
+ color:white;
+ display:none;
+}
+* {
+  box-sizing: border-box;
+}
+
+form.example input[type=text] {
+  padding: 10px;
+  font-size: 13px;
+  border: 1px solid grey;
+  float: left;
+  width: 80%;
+  background: #f1f1f1;
+}
+
+form.example button {
+  float: left;
+  width: 10%;
+  padding: 9px;
+  background: #ca205f;
+  color: white;
+  font-size: 15px;
+  border: 1px solid grey;
+  border-left: none;
+  cursor: pointer;
+}
+
+form.example button:hover {
+  background: #0b7dda;
+}
+
+form.example::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+}
+@media only screen and (max-width: 850px) {
+.ti_ti{
+     background: linear-gradient(81.84deg, #0099ff -9.4%, #a033ff 51.57%, #ff5280 84.07%, #ff7061 90.59%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    display: inline-block;
+    font-size: 60px;
+    font-weight: 450;
+    letter-spacing: -2px;
+    line-height: 52px;
+    padding: 0 50px 0;
+    text-align: left;
+    word-break: break-word;
+}
+  
+ 
+}
+.bnt_file{
+
+}
+.frinends_imgs{
+  width: 80px;
+  height: 80px;
+  border-radius:50px;
+  margin: 5px 20px auto;
+}
+body {
+    font-family: 'Trebuchet MS', sans-serif;
+    background: #f5f5f58a;
+}
+.name_friends{
+  margin: -80px 130px -130px;
+}
+.chani_btn{
+  border-style:solid;
+  border-width:thin;
+}
+.friend_name{
+   background:#4e4848;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    display: inline-block;
+    font-size: 30px;
+    font-weight: 450;
+    letter-spacing: -2px;
+    line-height: 52px;
+    padding: 20px 30px 0;
+    text-align: left;
+    word-break: break-word;
+}
+.bio_class{
+  
+  color:#c3a2ae;
+  width:40%;
+}
+.bio_container{
+ margin: auto 160px -33px;
+     width: 60%;
+}
+.bio_friend{
+    color:#c3a2ae;
+    margin: -60px 140px 10px;
+}
+</style>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+  <body>
+  
+  <nav>
+      <input type="checkbox" id="check">
+      <label for="check" class="checkbtn">
+        <i class="fas fa-bars"></i>
+      </label>
+      <h2 class="ti_ti" style="font-family:verdana">Chatbot</h2>
+       <label class="logo">
+       <form class="example" action="search_code" style="margin:auto;max-width:300px">
+        <input type="text" placeholder="Search.." name="search_box" class="search">
+        <button type="submit"><i class="fa fa-search"></i></button>
+        </form></label>
+      <ul>
+        <li><a class="active" href="back">Home</a></li>
+        <li><a href="#"><form action="imgupload" method="post" enctype="multipart/form-data">
+                      {% csrf_token %}
+                      <label class="custom-file-upload" >
+                      <input type="file" name="myfile"/>
+                      Uploadimage
+                      </label>
+                      <button type="submit">Ok</button>
+                      </form></a></li>
+        <li><a href="bioon">Addbio</a></li>
+         <li><a href="requsted_P">Request</a></li> 
+         <li><a href="logout">Logout</a></li> 
+        {% comment %} <li><a href="#">Feedba</a></li> {% endcomment %}
+      </ul>
+      {% for fri in user_fri%}
+      {% if fri.userr == user.username %}
+      <img src="{{fri.image.url}}" class="profile_img"><br>
+      {% endif %}
+      {% endfor %}
+      
+      {% for bk in bio%}
+        {% if bk.userr2 == user.username %}
+        <div class="bio_container">
+          <h4 class="bio_class">{{bk.bio}}</h4>
+          </div>
+        {% endif %}
+      {% endfor %}
+      
+      <h1 class="profile_name" style="font-family:verdana">{{user.username}}</h1>
+    
+         {% comment %} {% for i in friend_imgs %} 
+        <div class="chani_btn">
+        <form action = "inhome" style="text-decoration: none;">
+        <img src="{{i.image.url}}" class="frinends_imgs"><br>
+       
+      </form>
+        {% endfor %} {% endcomment %}
+        {% for x in friends %}
+         <form action = "inhome" style="text-decoration: none;">
+        <label class="chat_bt">
+         <button type="submit" action = "inhome" class="chat_btn" name="name_friend" value="{{x}}"> {{x}} </button>
+        {% comment %} <a href="#"style="text-decoration: none;"> {% endcomment %}
+        {% for i in friend_img %}
+        {% if i.userr == x %}
+        <img src="{{i.image.url}}" class="frinends_imgs">
+        {% endif %}
+        {% endfor %}
+        {% for bk in bio %}
+        {% if bk.userr2 == x %}
+          <h4 class="bio_friend">{{bk.bio}}</h4>
+        {% endif %}
+        {% endfor %}
+         <h1 class="friend_name">{{x}}</h1>
+         </label>
+       </form>
+      {% comment %} </form>
+      </div> {% endcomment %}
+       {% endfor %}
+       
+ </nav>
+    <section></section>
+  </body>
+</html>

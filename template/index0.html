@@ -1,0 +1,39 @@
+<html>
+<head>
+<style>
+.name {
+    background-color:f4c2c2;
+    color:white;
+    border-style:solid;
+    {% comment %} border-color: purple; {% endcomment %}
+    padding:20px;
+    font-size:40px;
+}
+.button_sub {
+    background-color:f4c2c2;
+    color:white;
+    border-style:solid;
+    border-color:white;
+    font-size:50px;
+}
+.sentans{
+    font-size:50px;
+    margin: auto 70px auto 120px;
+    width:80%;
+}
+
+</style>
+
+</head>
+<body>
+<h1 class="name">Chatbot</h1>
+<p></p>
+<form action="regst" method="post">
+{% csrf_token %}
+<h3 class="sentans">Welcome! this is the chatbot website to chat with your friends,family etc..</h3>
+<input type='submit' value="register" class="button_sub" name="regst">
+<input type='submit' value="register" class="button_sub" name="regst">
+</form>
+{% load static %}
+</body>
+</html>

@@ -1,0 +1,75 @@
+<html>
+<head>
+ <meta charset="utf-8">
+    <!-- <title>Responsive Navbar | CodingNepal</title> -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+.req_nn{
+    width:auto;
+    border-style:solid;
+    border-width:thin;
+}
+.accept_btn{
+    margin:auto 171px;
+    background:#ef003f;
+    color:white;
+    font-size:20px;
+    border-radius:20px;
+    border-color:white;
+}
+.ti_ti{
+   background: linear-gradient(81.84deg, #0099ff -9.4%, #a033ff 51.57%, #ff5280 84.07%, #ff7061 90.59%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    display: inline-block;
+    font-size: 60px;
+    font-weight: 450;
+    letter-spacing: -2px;
+    line-height: 52px;
+    padding: 0 50px 0;
+    text-align: left;
+    word-break: break-word;
+}
+.btn_img{
+border-radius:20px;
+margin: 20px auto;
+border-color:white;
+background:white;
+margin: auto;
+width:35px;
+}
+.back_btn{
+    width:25px;
+}
+.img__{
+    width:90px;
+    height:90px;
+    border-radius:20px;
+
+}
+</style>
+</head>
+<body>
+<h2 class="ti_ti" style="font-family:verdana">Chatbot</h2>
+<hr>
+ <form action="back">
+<button type="submit" class="btn_img" ><img src="media/pics/back_img.png" class="back_btn"></button>
+</form>
+{% for x in req %}
+<div class="req_nn">
+{% for img_fri in fri_imgs %}
+{% if img_fri.userr == x %}
+<img class="img__" src="{{img_fri.image.url}}">
+{% endif %}
+{% endfor %}
+<b>{{x}}</b>
+</a>
+<form action="accept">
+<button type="submit" class="accept_btn" value="{{x}}" name="acc_name">Accept</button>
+</form>
+</div>
+{% endfor %}
+
+</body>
+</html>

@@ -1,0 +1,168 @@
+{% comment %} <html>
+<head>
+<style>
+.username{
+
+
+}
+
+</style>
+</head>
+<body>
+<form action="home" method="post">
+{% csrf_token %}
+ <input type="username" name="username" placeholder="Username" class="username"><br>
+<input type="email" name="email" placeholder="Email"><br>
+<input type="password" name="password" placeholder="Password"><br>
+<input type='submit'>
+</form>
+<form  action="loginpage">
+login:<input type='submit'>
+</form>
+</body>
+</html> {% endcomment %}
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style> 
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: white;
+      {% comment %} background-image: linear-gradient(83.84deg, #0088FF -6.87%, #A033FF 26.54%, #FF5C87 58.58%); {% endcomment %}
+}
+
+* {
+  box-sizing: border-box;
+}
+
+/* Add padding to containers */
+.container {
+  {% comment %} margin-top:20px; {% endcomment %}
+  padding: 30px 700px 70px;
+  background-color: white;
+}
+
+/* Full-width input fields */
+input[type=text], input[type=password] {
+  width: 100%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  display: inline-block;
+  border: none;
+  background: #f1f1f1;
+}
+
+input[type=text]:focus, input[type=password]:focus {
+  background-color: #ddd;
+  outline: none;
+}
+
+/* Overwrite default styles of hr */
+hr {
+  border: 1px solid #f1f1f1;
+  margin-bottom: 25px;
+}
+
+/* Set a style for the submit button */
+.registerbtn {
+  background-color:f4c2c2;
+  color: white;
+  padding: 16px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  opacity: 0.9;
+}
+
+.registerbtn:hover {
+  opacity: 1;
+}
+
+/* Add a blue text color to links */
+a {
+  color: dodgerblue;
+}
+
+/* Set a grey background color and center the text of the "sign in" section */
+.signin {
+  background-color: #f1f1f1;
+  text-align: center;
+}
+.ti_ti{
+   background: linear-gradient(81.84deg, #0099ff -9.4%, #a033ff 51.57%, #ff5280 84.07%, #ff7061 90.59%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    display: inline-block;
+    font-size: 60px;
+    font-weight: 450;
+    letter-spacing: -2px;
+    line-height: 52px;
+    padding: 0 60px 0;
+    text-align: left;
+    word-break: break-word;
+}
+@media only screen and (max-width:750px){
+  .container {
+ padding: 30px 50px 0;
+  background-color: white;
+  margin: -50px auto;
+  }
+  .ti_ti{
+   background: linear-gradient(81.84deg, #0099ff -9.4%, #a033ff 51.57%, #ff5280 84.07%, #ff7061 90.59%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    display: inline-block;
+    font-size: 60px;
+    font-weight: 450;
+    letter-spacing: -2px;
+    line-height: 52px;
+    padding: 0 50px 0;
+    text-align: left;
+    word-break: break-word;
+}
+}
+{% comment %} radiostyle {% endcomment %}
+.gender{
+ padding: 20px 50px 30px;
+
+
+}
+
+</style>
+</head>
+<body>
+<h2 class="ti_ti" style="font-family:verdana">Chatbot</h2>
+
+<form action="home" method="post">
+{% csrf_token %}
+  <div class="container">
+    <h1>Register</h1>
+   
+    <hr>
+    
+    <input type="text" placeholder="Enter Username" name="username" id="email" required>
+
+    <input type="text" placeholder="Enter Email" name="email" id="email" required>
+
+    <input type="password" placeholder="Enter Password" name="password" id="psw" required>
+{% comment %} 
+     <input type="radio" class="gender" id="male" name="gender" value="male">
+     <label for="male">Male</label><br>
+     <input type="radio" class="gender" id="female" name="gender" value="female">
+     <label for="female">Female</label><br> {% endcomment %}
+     <hr>
+    <p>By creating an account you agree to our <a href="#">Terms & Privacy</a>.</p>
+
+    <button type="submit" class="registerbtn">Register</button>
+  </div>
+  
+  <div class="container signin">
+    <p>Already have an account? <a href="loginpage">login</a>.</p>
+  </div>
+</form>
+
+</body>
+</html>
